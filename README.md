@@ -16,7 +16,7 @@ Não é preciso *logar* para acessar a *timeline* de indicação de discos.
 O e-mail será usado só para avisar: link para a pagina de *timeline*; Ações de pausa no processo de indicação de discos;
 
 
-## como desenvolver
+## Como colaborar:  
 1. Clone o repositorio
 2. Crie um virtual env com python
 3. Ative seu virtual env
