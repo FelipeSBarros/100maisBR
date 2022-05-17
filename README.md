@@ -14,3 +14,26 @@ Funções:
 Alguns detalhes:
 Não é preciso *logar* para acessar a *timeline* de indicação de discos.
 O e-mail será usado só para avisar: link para a pagina de *timeline*; Ações de pausa no processo de indicação de discos;
+
+
+## como desenvolver
+1. Clone o repositorio
+2. Crie um virtual env com python
+3. Ative seu virtual env
+4. Instale as dependencias
+5. Configure a instancia com  .env
+6. Execute os testes
+7. Crie um novo branch
+8. Contribua
+9. Faça um [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+
+```console
+git clone git@github.com:FelipeSBarros/100maisBR.git
+cd 100maisBR
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp contrib/env-semple .env
+python manage test 
+git checkout -b new_branch
+```
