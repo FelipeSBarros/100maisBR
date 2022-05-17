@@ -1,5 +1,7 @@
 # [100MaisBR](https://twitter.com/100maisBr)  
 
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)  
+
 Projeto colaborativo de implementação de um sistema de inicação dos melhores discos brasileiros, inspirado no [1001albumsgenerator](https://1001albumsgenerator.com/).
 Atualmente o projeto indica os discos por email e também pelo [twitter](https://twitter.com/100maisBr).
 
