@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # modules
+    'test_without_migrations',
     # apps
     "Os100maisBR.core.apps.CoreConfig",
+    "Os100maisBR.albums.apps.AlbumsConfig",
 ]
 
 MIDDLEWARE = [
@@ -114,7 +117,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
