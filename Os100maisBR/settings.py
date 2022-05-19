@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # modules
     'test_without_migrations',
+    'django_extensions',
     # apps
     "Os100maisBR.core.apps.CoreConfig",
     "Os100maisBR.albums.apps.AlbumsConfig",
