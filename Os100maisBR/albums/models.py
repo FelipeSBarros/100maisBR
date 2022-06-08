@@ -8,6 +8,20 @@ class Album(models.Model):
     wikipedia_link = models.URLField(
         verbose_name="Link da wikipedia", blank=True, null=True
     )
+    created_at = models.DateTimeField(
+        verbose_name="Data e hora de criação", auto_now_add=True
+    )
+    updated_at = models.DateTimeField(
+        verbose_name="Data e hora da última atualização", auto_now=True
+    )
+
+    class Meta:
+        verbose_name_plural = "Albums"
+        verbose_name = "Album"
+        ordering = ("-ano",)
+
+    def __str__(self):
+        return f"{self.titulo}, {self.ano}"
 
 
 class Artista(models.Model):
@@ -15,3 +29,17 @@ class Artista(models.Model):
     wikipedia_link = models.URLField(
         verbose_name="Link da wikipedia", blank=True, null=True
     )
+    created_at = models.DateTimeField(
+        verbose_name="Data e hora de criação", auto_now_add=True
+    )
+    updated_at = models.DateTimeField(
+        verbose_name="Data e hora da última atualização", auto_now=True
+    )
+
+    class Meta:
+        verbose_name_plural = "Artistas"
+        verbose_name = "Artista"
+        ordering = ("nome",)
+
+    def __str__(self):
+        return self.nome

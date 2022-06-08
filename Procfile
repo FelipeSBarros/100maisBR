@@ -1,0 +1,1 @@
+web: gunicorn Os100maisBR.wsgi --log-file -
