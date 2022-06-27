@@ -14,6 +14,7 @@ class Album(models.Model):
     updated_at = models.DateTimeField(
         verbose_name="Data e hora da última atualização", auto_now=True
     )
+    grades = models.ManyToManyField("Grade")
 
     class Meta:
         verbose_name_plural = "Albums"
@@ -43,3 +44,17 @@ class Artista(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class Grade(models.Model):
+    ONE_TO_FIVE = ((1, 1), (2, 2), (3, 3), (4, 4), (5, 5))
+    grade = models.IntegerField(
+        verbose_name="Nota",
+        help_text="Atribua uma nota a este album",
+        choices=ONE_TO_FIVE,
+        null=True,
+    )  # todo como fazer o nullo pelo from (front)
+
+    class Meta:
+        verbose_name_plural = "Notas"
+        verbose_name = "Nota"

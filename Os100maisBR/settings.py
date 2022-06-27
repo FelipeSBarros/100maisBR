@@ -31,9 +31,11 @@ INSTALLED_APPS = [
     # modules
     "test_without_migrations",
     "django_extensions",
+    "crispy_forms",
     # apps
     "Os100maisBR.core.apps.CoreConfig",
     "Os100maisBR.albums.apps.AlbumsConfig",
+    "Os100maisBR.coletaneas.apps.ColetaneasConfig",
 ]
 
 MIDDLEWARE = [
@@ -116,3 +118,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

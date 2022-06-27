@@ -33,9 +33,14 @@ class AlbumModelTest(TestCase):
             nome="cazuza",
             wikipedia_link="https://pt.wikipedia.org/wiki/Cazuza",
         )
+        self.album.grades.create(grade=2)
+        self.album.grades.create(grade=2)
 
     def test_created(self):
         self.assertTrue(Album.objects.exists())
 
     def test_album_has_artistas(self):
         self.assertEqual(2, self.album.artista.count())
+
+    def test_album_has_many_grades(self):
+        self.assertEqual(2, self.album.grades.count())

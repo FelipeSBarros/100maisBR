@@ -6,7 +6,10 @@ Projeto colaborativo de implementação de um sistema de inicação dos melhores
 Atualmente o projeto indica os discos por email e também pelo [twitter](https://twitter.com/100maisBr).
 
 Funções:  
-- [ ] Cada usuário cria um 'projeto';
+- [X] Temos uma base de dados com albums de música brasileira;
+- [X] Cada album tem os artistas envolvidos na obra numa relação M-2-M;
+- [ ] Cada usuário cria um '~~projeto~~ coletânea(?)';
+- [ ] Cada usuário pode atribuir uma nota de 1 a 5 ao disco, ou aosentar-se (deixar Nulo);
 - [ ] Cada projeto tem sua *timeline* de discos indicados;
 - [ ] Caso a página do 'projeto' não seja acessada pelo usuário por X dias, a indicação de discos é pausada. Um email é enviado para avisar;
 - [ ] O usuário **pode** dar nota a cada disco indicado (valor de 1 a 5), mas pode seguir sem votar ou, ainda indicar que não escutou;
