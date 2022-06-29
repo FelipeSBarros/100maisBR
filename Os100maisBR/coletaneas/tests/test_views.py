@@ -55,6 +55,7 @@ class ColetaneaNewPostValid(TestCase):
     def test_save_coletanea(self):
         self.assertTrue(Coletanea.objects.exists())
 
+
 class ColetaneaNewPostInvalid(TestCase):
     def setUp(self):
         self.resp = self.client.post(r("coletaneas:new"), {})
@@ -64,14 +65,14 @@ class ColetaneaNewPostInvalid(TestCase):
         self.assertEqual(200, self.resp.status_code)
 
     def test_template(self):
-        self.assertTemplateUsed(self.resp, 'coletaneas/coletanea_form.html')
+        self.assertTemplateUsed(self.resp, "coletaneas/coletanea_form.html")
 
     def test_has_form(self):
-        form = self.resp.context['form']
+        form = self.resp.context["form"]
         self.assertIsInstance(form, ColetaneaForm)
 
     def test_form_has_errors(self):
-        form = self.resp.context['form']
+        form = self.resp.context["form"]
         self.assertTrue(form.errors)
 
     def test_dont_save_subscription(self):
