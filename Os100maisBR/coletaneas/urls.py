@@ -1,9 +1,10 @@
 from django.urls import path
-from Os100maisBR.coletaneas.views import CreateColetanea
+
+from Os100maisBR.coletaneas.views import create_coletanea, detalhe_coletanea
 
 app_name = "coletaneas"
 
 urlpatterns = [
-    path("new/", CreateColetanea.as_view(), name="new"),
-    # path("<slug:slug>", ArticleDetailView.as_view(), name="article_detail"),
+    path("nova/", create_coletanea, name="new"),
+    path("<str:slug>", detalhe_coletanea, name="detail"),
 ]

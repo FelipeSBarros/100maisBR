@@ -14,7 +14,7 @@ class Coletanea(models.Model):
     created_at = models.DateTimeField(
         verbose_name="Data e hora de criação", auto_now_add=True
     )
-    last_visitat = models.DateTimeField(
+    last_visit = models.DateTimeField(
         verbose_name="Data e hora da última visita", auto_now=True
     )
 
@@ -26,9 +26,9 @@ class Coletanea(models.Model):
         return self.slug
 
     def get_absolute_url(self):
-        return reverse("coletanea_detail", kwargs={"slug": self.slug})
+        return reverse("coletaneas:detail", kwargs={"slug": self.slug})  # todo slug=self.slug
 
     def save(self, *args, **kwargs):
-        if not self.slug:
+        if not self.id:
             self.slug = slugify(self.nome_coletanea)
-        return super().save(*args, **kwargs)
+        super(Coletanea, self).save(*args, **kwargs)
