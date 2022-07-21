@@ -14,3 +14,7 @@ class ColetaneaModelTest(TestCase):
 
     def test_slug_is_created_automatcally(self):
         assert self.col1.slug == "coletanea-da-vovozinha"
+
+
+# todo test if coletanea has published Albums
+# todo test if coletanea can vote on published Album

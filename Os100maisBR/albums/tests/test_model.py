@@ -1,6 +1,6 @@
 from django.test import TestCase
+
 from Os100maisBR.albums.models import Album, Artista
-from django.shortcuts import resolve_url as r
 
 
 class ArtistaModelTest(TestCase):

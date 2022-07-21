@@ -10,6 +10,7 @@ class Coletanea(models.Model):
     email = models.EmailField(
         help_text="Usaremos o seu email apenas para enviar o link da sua coletânea por email."
     )
+    albums = models.ManyToManyField("albums.Album", verbose_name="Albums", blank=True)
     slug = models.SlugField(null=True, unique=True)
     created_at = models.DateTimeField(
         verbose_name="Data e hora de criação", auto_now_add=True
@@ -26,7 +27,9 @@ class Coletanea(models.Model):
         return self.slug
 
     def get_absolute_url(self):
-        return reverse("coletaneas:detail", kwargs={"slug": self.slug})  # todo slug=self.slug
+        return reverse(
+            "coletaneas:detail", kwargs={"slug": self.slug}
+        )  # todo slug=self.slug
 
     def save(self, *args, **kwargs):
         if not self.id:

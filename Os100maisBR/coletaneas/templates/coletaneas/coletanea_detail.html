@@ -7,25 +7,66 @@
 
 <!-- OVERVIEW -->
 <section>
-
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <h1 class="text-center">Obrigado por se inscrever!</h1>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-sm-3">
+                <br>
+                <div class="text-center"><strong>Informações sobre a coletânea:</strong></div>
+                <table class="table table-user-information">
+                    <tbody>
+                    <tr>
+                        <th class="text-right">Nome da coletâea:</th>
+                        <td>{{ coletanea.nome_coletanea }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">slug:</th>
+                        <td>{{ coletanea.slug }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-            <h1>Obrigado por se inscrever!</h1>
-            <br>
-            <table class="table table-user-information">
-                <tbody>
-                <tr>
-                    <th class="text-right">Nome da coletâea:</th>
-                    <td>{{ coletanea.nome_coletanea }}</td>
-                </tr>
-                <tr>
-                    <th class="text-right">slug:</th>
-                    <td>{{ coletanea.slug }}</td>
-                </tr>
-                </tbody>
-        </div>
-        <div class="col-sm-4"></div>
+                    {% if coletanea.albums %}
+                    {% for album in coletanea.albums.all %}
+                <table class="table table-user-information">
+                    <tbody>
+                    <tr>
+    <!--                    <th class="text-right">Título:</th>-->
+                        <th></th>
+                        <td><h3>{{ album.titulo }}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Capa:</th>
+                        <td><img src="{{ album.img_link }}"></td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Ouça em:</th>
+                        <td><a class="fa fa-spotify fa-3x" href="{{ album.spotify_link }}" style="color: #000"></a></td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Ano de lançamento:</th>
+                        <td>{{ album.ano }}</td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Artista(s):</th>
+                        <td>
+                            {{ album.artista.all|join:", " }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
     </div>
 </section>
 

@@ -8,6 +8,10 @@ class Album(models.Model):
     wikipedia_link = models.URLField(
         verbose_name="Link da wikipedia", blank=True, null=True
     )
+    spotify_link = models.URLField(verbose_name="Link do album", blank=True, null=True)
+    img_link = models.URLField(
+        verbose_name="Link da capa do album", blank=True, null=True
+    )
     created_at = models.DateTimeField(
         verbose_name="Data e hora de criação", auto_now_add=True
     )
@@ -19,7 +23,7 @@ class Album(models.Model):
     class Meta:
         verbose_name_plural = "Albums"
         verbose_name = "Album"
-        ordering = ("-ano",)
+        ordering = ("-pk",)
 
     def __str__(self):
         return f"{self.titulo}, {self.ano}"

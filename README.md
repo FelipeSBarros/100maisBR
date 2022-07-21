@@ -10,12 +10,14 @@ Atualmente o projeto indica os discos por email e também pelo [twitter](https:/
 - [X] Base de dados com albums de música brasileira;
 - [X] Cada album tem os artistas envolvidos na obra numa relação M-2-M;
 - [X] Cada usuário cria um '~~projeto~~ coletânea(?)';
-- [ ] A cada dia o usuário recebe uma indicação de disco em sua coletânea;
+- [ ] Um e-mail de confirmação é enviado ao usuário com o link de sua coletânea;
+- [x] A cada dia o usuário recebe uma indicação de disco em sua coletânea (*timeline*);
+  - Função [criada](./scripts/publish_album.py), falta criar teste e edicionr um *cronjob* para executá-lo todos os dias;  
 - [ ] O usuário **pode** dar nota a cada disco indicado (valor de 1 a 5), mas pode seguir sem votar ou, ainda indicar que não escutou;
-- [ ] Cada projeto tem sua *timeline* de discos indicados;
-- [ ] Caso a página do 'projeto' não seja acessada pelo usuário por X dias, a indicação de discos é pausada. Um email é enviado para avisar;
-- [ ] Cada 'projeto' tem um painel com informações e comprarações das notas atribuidas entre os demais, permitindo identificar o gosto músical, década, etc;
-- [ ] Possibilidade de criar um 'projeto' coletivo, para que mais de uma pessoa acessar a *timeline* e mais de uma pessoa poderá dar nota ao mesmo disco;
+- [ ] Caso a página da coletânea não seja acessada pelo usuário por X dias, a indicação de discos é pausada.
+- [ ] Um email é enviado para avisar que indicação de discos foi pausada;
+- [ ] Cada coletea tem um painel com estatísticas das notas datas, e comprarações das notas atribuidas entre os demais, permitindo identificar o gosto músical, década, etc;
+- [ ] Possibilidade de criar uma coletânea coletiva, para que mais de uma pessoa possa acessar a *timeline* e dar nota ao mesmo disco;
 
 **Alguns detalhes:**
 
@@ -44,4 +46,10 @@ pip install -r requirements.txt
 cp contrib/env-semple .env
 python manage test 
 git checkout -b new_branch
+```
+
+**Fazendo a primeira carga de dados de albums**:
+
+```commandline
+python manage.py runscript load_albums_to_db
 ```
