@@ -1,0 +1,8 @@
+Olá,
+
+sua coletânea "{{ coletanea.nome_coletanea }}" foi criada com sucesso!
+
+Guarde este link para acessá-la:
+{{ coletanea.get_absolute_url }}
+
+Abraço!

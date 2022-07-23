@@ -25,6 +25,10 @@ class AlbumModelTest(TestCase):
             ano=1989,
             wikipedia_link="https://pt.wikipedia.org/wiki/Cazuza",
         )
+        self.album2 = Album.objects.create(
+            titulo="Teste de album 2",
+            ano=2010,
+        )
         self.cartola = self.album.artista.create(
             nome="Cartola",
             wikipedia_link="https://pt.wikipedia.org/wiki/Cartola_(compositor)",
@@ -44,3 +48,8 @@ class AlbumModelTest(TestCase):
 
     def test_album_has_many_grades(self):
         self.assertEqual(2, self.album.grades.count())
+
+    def test_album_ordering(self):
+        albums = Album.objects.all()
+        albums = [album for album in albums]
+        self.assertEquals(albums, [self.album2, self.album])

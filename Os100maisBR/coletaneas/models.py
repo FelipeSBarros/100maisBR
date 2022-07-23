@@ -29,7 +29,7 @@ class Coletanea(models.Model):
     def get_absolute_url(self):
         return reverse(
             "coletaneas:detail", kwargs={"slug": self.slug}
-        )  # todo slug=self.slug
+        )
 
     def save(self, *args, **kwargs):
         if not self.id:
