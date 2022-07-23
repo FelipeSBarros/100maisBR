@@ -1,8 +1,11 @@
 from django.core import mail
 from django.test import TestCase
 from django.shortcuts import resolve_url as r
+from unittest import skip
 
 
+
+@skip("not implemented")
 class ColetaneaNewPostValid(TestCase):
     def setUp(self):
         valida_data = dict(nome_coletanea="Coletanea da Vovó", email="user@host.com")
