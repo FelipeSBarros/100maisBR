@@ -40,7 +40,7 @@ class ColetaneaDetailGet(TestCase):
         self.assertIsInstance(coletanea, Coletanea)
 
 
-class ColetaneaLastVisitIsUpdated(TestCase):
+class ColetaneaLastVisitIsUpdated(TestCase):  # todo add message informando que publicação foi pausada
     def setUp(self):
         self.BR_TIME_ZONE = timezone(timedelta(hours=-3))
         self.mocked_date = datetime(2022, 1, 1, 0, 0, 0, tzinfo=self.BR_TIME_ZONE)
