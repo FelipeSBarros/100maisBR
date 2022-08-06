@@ -7,6 +7,14 @@
 
 <!-- OVERVIEW -->
 <section>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            <p>{{ message }}</p>
+        </div>
+    {% endfor %}
+{% endif %}
+
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
@@ -20,7 +28,7 @@
                 <table class="table table-user-information">
                     <tbody>
                     <tr>
-                        <th class="text-right">Nome da coletâea:</th>
+                        <th class="text-right">Nome da coletânea:</th>
                         <td>{{ coletanea.nome_coletanea }}</td>
                     </tr>
                     <tr>

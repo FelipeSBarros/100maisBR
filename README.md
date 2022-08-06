@@ -12,7 +12,8 @@ Atualmente o projeto indica os discos por email e também pelo [twitter](https:/
 - [X] Cada usuário cria um '~~projeto~~ coletânea(?)';
 - [ ] Um e-mail de confirmação é enviado ao usuário com o link de sua coletânea;
 - [x] A cada dia o usuário recebe uma indicação de disco em sua coletânea (*timeline*);
-  - Função [criada](./scripts/publish_album.py), falta criar teste e edicionr um *cronjob* para executá-lo todos os dias;  
+  - Função [criada](./scripts/publish_album.py), falta criar teste e edicionar um *cronjob* para executá-lo todos os dias;  
+  - `python manage.py runscript publish_album.py`
 - [ ] O usuário **pode** dar nota a cada disco indicado (valor de 1 a 5), mas pode seguir sem votar ou, ainda indicar que não escutou;
 - [ ] Caso a página da coletânea não seja acessada pelo usuário por X dias, a indicação de discos é pausada.
 - [ ] Um email é enviado para avisar que indicação de discos foi pausada;
