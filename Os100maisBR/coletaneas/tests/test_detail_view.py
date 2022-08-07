@@ -40,7 +40,7 @@ class ColetaneaDetailGet(TestCase):
         self.assertIsInstance(coletanea, Coletanea)
 
 
-class ColetaneaLastVisitIsUpdated(TestCase):  # todo add message informando que publicação foi pausada
+class ColetaneaLastVisitIsUpdated(TestCase):
     def setUp(self):
         self.BR_TIME_ZONE = timezone(timedelta(hours=-3))
         self.mocked_date = datetime(2022, 1, 1, 0, 0, 0, tzinfo=self.BR_TIME_ZONE)
@@ -56,17 +56,13 @@ class ColetaneaLastVisitIsUpdated(TestCase):  # todo add message informando que 
 
     def test_get_method_update_last_visit_field(self):
         """ "GET should update last_visit model field"""
-        self.resp = self.client.get(
-            r("coletaneas:detail", slug="coletanea-da-vovozinha")
-        )
-        mocked_date2 = datetime(2022, 1, 3, 0, 0, 0, tzinfo=self.BR_TIME_ZONE)
+        mocked_date2 = datetime(2022, 1, 4, 0, 0, 0, tzinfo=self.BR_TIME_ZONE)
         with mock.patch(
             "django.utils.timezone.now", mock.Mock(return_value=mocked_date2)
         ):
             self.resp = self.client.get(
                 r("coletaneas:detail", slug="coletanea-da-vovozinha")
             )
-
         self.assertNotEqual(
             self.resp.context["coletanea"].last_visit.astimezone(self.BR_TIME_ZONE),
             self.mocked_date,

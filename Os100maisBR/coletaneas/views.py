@@ -18,6 +18,12 @@ class ColetaneaDetailView(DetailView):
 
     def get_object(self):
         object = super().get_object()
+        if object.last_visit > GOOD_UNTIL:
+            messages.add_message(
+                self.request,
+                messages.INFO,
+                f"Olá! Sua última visita foi em {object.last_visit.date()}.\n\n Como se passaram mais de dois dias sem sua visita, pausamos a inclusão de discos. Vamos retomar-las a partir de hoje.",
+            )
         object.last_visit = datetime.now()
         object.save()
         return object
