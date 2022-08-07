@@ -15,9 +15,9 @@ Atualmente o projeto indica os discos por email e também pelo [twitter](https:/
   - Função [criada](./scripts/publish_album.py), falta criar teste e edicionar um *cronjob* para executá-lo todos os dias;  
   - `python manage.py runscript publish_album.py`
 - [ ] O usuário **pode** dar nota a cada disco indicado (valor de 1 a 5), mas pode seguir sem votar ou, ainda indicar que não escutou;
-- [ ] Caso a página da coletânea não seja acessada pelo usuário por X dias, a indicação de discos é pausada.
+- [X] Caso a página da coletânea não seja acessada pelo usuário por X dias, a indicação de discos é pausada.
 - [ ] Um email é enviado para avisar que indicação de discos foi pausada;
-- [ ] Cada coletea tem um painel com estatísticas das notas datas, e comprarações das notas atribuidas entre os demais, permitindo identificar o gosto músical, década, etc;
+- [ ] Cada coletanea tem um painel com estatísticas das notas datas, e comprarações das notas atribuidas entre os demais, permitindo identificar o gosto músical, década, etc;
 - [ ] Possibilidade de criar uma coletânea coletiva, para que mais de uma pessoa possa acessar a *timeline* e dar nota ao mesmo disco;
 
 **Alguns detalhes:**
