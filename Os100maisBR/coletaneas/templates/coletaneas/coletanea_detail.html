@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block css %}
-
-{% endblock %}
-
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+{% endblock css %}
+{% block js %}
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+{% endblock js %}
+{% load ratings %}
 {% block content %}
 
 <!-- OVERVIEW -->
@@ -44,6 +48,22 @@
         <div class="col-sm-4">
                     {% if coletanea.albums %}
                     {% for album in coletanea.albums.all %}
+                    <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ album.img_link }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ album.titulo }}</h5>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div style="text-align: center">
+                                    <a class="card-link fa fa-spotify fa-3x" style="color: #000" href="{{ album.spotify_link }}"></a>
+                                </div>
+                            </li>
+                        <li class="list-group-item">Ano de lançamento: {{ album.ano }}</li>
+                        <li class="list-group-item">Artista(s): {{ album.artista.all|join:", " }}</li>
+                        <li class="list-group-item">{% ratings album %}</li>
+                        </ul>
+                    </div>
                 <table class="table table-user-information">
                     <tbody>
                     <tr>
@@ -68,6 +88,12 @@
                         <th class="text-right">Artista(s):</th>
                         <td>
                             {{ album.artista.all|join:", " }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">Vote:</th>
+                        <td>
+                            {% ratings album %}
                         </td>
                     </tr>
                     {% endfor %}

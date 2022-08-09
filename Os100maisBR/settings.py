@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "test_without_migrations",
     "django_extensions",
     "crispy_forms",
+    "star_ratings",
     # apps
     "Os100maisBR.core.apps.CoreConfig",
     "Os100maisBR.albums.apps.AlbumsConfig",
