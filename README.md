@@ -44,8 +44,8 @@ cd 100maisBR
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp contrib/env-semple .env
-python manage test 
+cp ./contrib/env-semple .env
+python3 manage.py test 
 git checkout -b new_branch
 ```
 
