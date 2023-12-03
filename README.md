@@ -32,7 +32,7 @@ O e-mail será usado só para avisar: link para a pagina de *timeline*; Ações 
 1. Crie um virtual env com python
 1. Ative seu virtual env
 1. Instale as dependencias
-1. Configure a instancia com  .env
+1. Configure a instancia com [.env](./contrib/env-sample)
 1. Execute os testes
 1. Execute as migrações
 1. Crie um super usuário
@@ -46,12 +46,12 @@ O e-mail será usado só para avisar: link para a pagina de *timeline*; Ações 
 1. Faça um [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
 ```console
-
 cd 100maisBR
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp ./contrib/env-semple .env
+echo -n "SECRET_KEY=">bla.txt; python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())
+' -n >> .env
 python3 manage.py test
 python3 manage.py migrate
 python3 manage.py createsuperuser
