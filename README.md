@@ -66,3 +66,10 @@ git checkout -b new_branch
 ```commandline
 python manage.py runscript load_albums_to_db
 ```
+
+**Realizando a publicação dos álbums nas coletâneas criadas**:
+
+A ideia é que todos os dias o seguinte script seja executado, para que os álbums sejam publicados nas coletâneas criadas:
+```commandline
+python3 manage.py runscript publish_album
+```
