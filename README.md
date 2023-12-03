@@ -50,7 +50,7 @@ cd 100maisBR
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-echo -n "SECRET_KEY=">bla.txt; python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())
+echo -n "SECRET_KEY=">.env; python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())
 ' -n >> .env
 python3 manage.py test
 python3 manage.py migrate
