@@ -18,7 +18,7 @@ class ColetaneaDetailView(DetailView):
 
     def get_object(self):
         object = super().get_object()
-        if object.last_visit > GOOD_UNTIL:
+        if object.last_visit < GOOD_UNTIL:
             messages.add_message(
                 self.request,
                 messages.INFO,
